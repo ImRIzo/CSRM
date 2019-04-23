@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -16,16 +17,19 @@ import javafx.stage.Stage;
  * @author R
  */
 public class CSRM extends Application {
-    public Static Stage loginstage;
-    
+    public static Stage loginstage;
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage loginstage) throws Exception {
+        this.loginstage = loginstage;
         Parent root = FXMLLoader.load(getClass().getResource("/scene/login.fxml"));
         
         Scene scene = new Scene(root);
         
-        stage.setScene(scene);
-        stage.show();
+        loginstage.setScene(scene);
+        loginstage.setResizable(false);
+        loginstage.getIcons().add(new Image("/scene/css.png"));
+        loginstage.setTitle("CSRM");
+        loginstage.show();
     }
 
     /**

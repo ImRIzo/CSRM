@@ -5,27 +5,26 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FrameController">
+<BorderPane fx:id="mainpain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FrameController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Support">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Add New Issue" />
-              <MenuItem mnemonicParsing="false" text="Report" />
-                  <MenuItem mnemonicParsing="false" text="Add New Service" />
+                  <MenuItem mnemonicParsing="false" onAction="#addNewIssue" text="Add New Issue" />
+              <MenuItem mnemonicParsing="false" onAction="#showReport" text="Report" />
+                  <MenuItem mnemonicParsing="false" onAction="#addNewService" text="Add New Service" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Customer">
             <items>
-              <MenuItem mnemonicParsing="false" text="Add Customer" />
+              <MenuItem mnemonicParsing="false" onAction="#showAddCustomer" text="Add Customer" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Help">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About CSRM" />
-                  <MenuItem mnemonicParsing="false" text="Log Out" />
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About CSRM" />
+                  <MenuItem mnemonicParsing="false" onAction="#logout" text="Log Out" />
                </items>
             </Menu>
         </menus>

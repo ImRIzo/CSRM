@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -13,21 +14,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddcustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1027.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddcustomerController">
    <children>
-      <SplitPane dividerPositions="0.617056856187291" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.7785365853658537" prefHeight="400.0" prefWidth="1027.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="366.0">
                <children>
-                  <TableView fx:id="customerList" layoutX="5.0" layoutY="79.0" prefHeight="251.0" prefWidth="356.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="79.0">
+                  <TableView fx:id="customerList" layoutX="5.0" layoutY="79.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="79.0">
                     <columns>
                       <TableColumn fx:id="customerName" prefWidth="130.0" text="CustomerName" />
                         <TableColumn fx:id="customerID" prefWidth="130.0" text="CustomerID" />
                       <TableColumn fx:id="customerPhone" prefWidth="130.0" text="Phone" />
                         <TableColumn fx:id="customerEmail" prefWidth="130.0" text="Email" />
                         <TableColumn fx:id="customerAddress" prefWidth="130.0" text="Address" />
-                        <TableColumn prefWidth="130.0" text="Issue Complained" />
+                        <TableColumn fx:id="tService" prefWidth="130.0" text="Issue Complained" />
                     </columns>
                   </TableView>
                   <Label layoutX="7.0" layoutY="34.0" text="Customer List">
@@ -57,9 +57,18 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No :" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" GridPane.rowIndex="2" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address :" GridPane.rowIndex="3" />
-                        <JFXButton style="-fx-background-color: #00B8ED;" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <JFXButton style="-fx-background-color: #00B8ED;" text="Remove" GridPane.rowIndex="4" />
-                        <JFXButton style="-fx-background-color: #00B8ED;" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXButton onAction="#addNewCustomer" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #00B8ED;" text="Add New" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton onAction="#removeCustomer" style="-fx-background-color: #00B8ED;" text="Remove" GridPane.rowIndex="4">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton onAction="#updateCustomer" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #00B8ED;" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
                         <JFXTextField fx:id="cName" GridPane.columnIndex="1" />
                         <JFXTextField fx:id="cPhone" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <JFXTextField fx:id="cEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
